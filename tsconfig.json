@@ -1,0 +1,55 @@
+{
+  "ts-node": {
+    "swc": true,
+    "esm": true
+  },
+  "exclude": ["node_modules", "dist", "scripts", "test", "**/*spec.ts"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.mts",
+    "**/*.mjs",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.json",
+    "src/**/*",
+    "src/store.ts"
+  ],
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": "./src/",
+    "paths": {
+      "@/*": ["./src/*", "*"],
+      "categories/*": ["domain/categories/*"],
+      "orders/*": ["domain/orders/*"],
+      "payments/*": ["domain/payments/*"],
+      "products/*": ["domain/products/*"],
+      "users/*": ["domain/users/*"],
+      "database/*": ["database/*"],
+      "common/*": ["common/*"],
+      "auth/*": ["auth/*"],
+      "querying/*": ["querying/*"],
+      "testing": ["testing/*"]
+    },
+    "lib": ["ES2024", "Decorators", "ESNext"],
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "moduleDetection": "force",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false
+  },
+  "watchOptions": {
+    "watchFile": "fixedPollingInterval"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "organizeImports": {
+    "enabled": true
+  },
+  "files": {},
+
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 80,
+    "lineEnding": "lf",
+    "attributePosition": "auto",
+    "bracketSpacing": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "style": {
+        "useDefaultParameterLast": "warn",
+        "noParameterAssign": "warn",
+        "noInferrableTypes": "off",
+        "noNonNullAssertion": "off",
+        "noUselessElse": "off",
+        "useConst": "off",
+        "useSingleVarDeclarator": "off",
+        "useSelfClosingElements": "off",
+        "useImportType": "off",
+        "useNumberNamespace": "off",
+        "useTemplate": "off",
+        "useAsConstAssertion": "off"
+      },
+      "a11y": {
+        "useButtonType": "off",
+        "useKeyWithClickEvents": "off",
+        "noSvgWithoutTitle": "off"
+      },
+      "complexity": {
+        "useArrowFunction": "off",
+        "noUselessConstructor": "off",
+        "noBannedTypes": "off",
+        "noUselessTernary": "off"
+      },
+      "correctness": {
+        "useExhaustiveDependencies": "off",
+        "noUnsafeOptionalChaining": "warn",
+        "noUndeclaredVariables": "off",
+        "noUnnecessaryContinue": "warn",
+        "noUnreachable": "warn",
+        "noUnusedVariables": "off",
+        "useHookAtTopLevel": "off",
+        "noUnusedLabels": "warn"
+      },
+      "suspicious": {
+        "noExplicitAny": "off"
+      }
+    }
+  },
+  "javascript": {
+    "parser": {
+      "unsafeParameterDecoratorsEnabled": true
+    },
+    "formatter": {
+      "enabled": true,
+      "semicolons": "always",
+      "quoteStyle": "double",
+      "jsxQuoteStyle": "double",
+      "arrowParentheses": "always",
+      "trailingCommas": "all",
+      "quoteProperties": "asNeeded",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineWidth": 80,
+      "lineEnding": "lf",
+      "attributePosition": "auto"
+    },
+    "jsxRuntime": "transparent"
+  },
+  "json": {
+    "parser": {
+      "allowComments": true,
+      "allowTrailingCommas": true
+    },
+    "formatter": {
+      "enabled": true,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineWidth": 80,
+      "lineEnding": "lf",
+      "trailingCommas": "all"
+    }
+  }
+}

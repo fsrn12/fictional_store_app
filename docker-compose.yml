@@ -1,0 +1,12 @@
+services:
+  database:
+    image: "postgres:latest"
+    restart: "always"
+    ports:
+      - "${DB_PORT}:5432"
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}

@@ -1,0 +1,40 @@
+import { User } from "@/domain/users/entities/user.entity.js";
+import { Injectable, UnauthorizedException } from "@nestjs/common";
+import { InjectRepository } from "@nestjs/typeorm";
+import type { Repository } from "typeorm";
+import type { HashingProvider } from "./hashing/hashing.provider.js";
+
+@Injectable()
+export class AuthService {
+  constructor(
+    @InjectRepository(User) private readonly usersRepository: Repository<User>,
+    private readonly hashingProvider: HashingProvider,
+  ) {}
+
+  async validateLocal(email: string, password: string) {
+    //1: Check if user exists
+    const user = await this.usersRepository.findOne({
+      select: {
+        id: true,
+        password: true,
+      },
+      where: { email },
+    });
+    if (!user) {
+      throw new UnauthorizedException("No user found");
+    }
+    console.log({ user });
+
+    //2: Compare Login Password with DB User Password
+    const doPasswordsMatch = await this.hashingProvider.compare(
+      password,
+      user.password,
+    );
+
+    if (!doPasswordsMatch) {
+      throw new UnauthorizedException("Invalid login attempt.");
+    }
+
+    return { id: user.id };
+  }
+}
