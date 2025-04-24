@@ -58,10 +58,11 @@
   "devDependencies": {
     "@babel/helpers": "^7.27.0",
     "@biomejs/biome": "^1.9.4",
-    "@faker-js/faker": "^9.5.1",
+    "@faker-js/faker": "^9.7.0",
     "@nestjs/cli": "^11.0.7",
     "@nestjs/schematics": "^11.0.5",
     "@nestjs/swagger": "^11.1.5",
+    "@nestjs/testing": "^11.1.0",
     "@swc/cli": "^0.7.3",
     "@swc/core": "^1.11.22",
     "@types/bytes": "^3.1.5",
@@ -79,6 +80,7 @@
     "prettier": "^3.5.3",
     "prettier-plugin-organize-imports": "^4.1.0",
     "source-map-support": "^0.5.21",
+    "ts-jest": "^29.3.2",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.8.3"
